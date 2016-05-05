@@ -1,0 +1,11 @@
+// https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html
+// Setzt für alle neu erstellten Indizes die Anzahl der shards und replicas
+PUT /_template/set_settings_template
+{
+  "template": "*",
+  "order": 0,
+  "settings" : {
+      "number_of_shards" : 1,
+      "number_of_replicas" : 0
+   }
+}

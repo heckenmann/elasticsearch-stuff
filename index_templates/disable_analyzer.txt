@@ -1,0 +1,22 @@
+// https://www.elastic.co/guide/en/elasticsearch/guide/current/custom-dynamic-mapping.html#dynamic-templates
+// Deaktiviert Analyzer für alle String-Felder
+PUT /_template/disable_analyzer_template
+{
+  "template": "*",
+  "order": 0,
+  "mappings": {
+    "my_type": {
+      "dynamic_templates": [
+        {
+          "my_description_for_mapping": {
+            "match_mapping_type": "string",
+            "mapping": {
+              "type": "string",
+              "index": "not_analyzed"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

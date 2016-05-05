@@ -1,0 +1,10 @@
+// https://www.elastic.co/guide/en/elasticsearch/guide/current/index-templates.html
+// Fügt den neu erzeugten Indizes Aliases hinzu
+PUT /_template/add_alias_template
+{
+  "template": "*",
+  "order": 0,
+  "aliases" : {
+	"my_alias" : {}
+  }
+}
